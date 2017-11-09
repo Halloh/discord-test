@@ -11,8 +11,9 @@ class DiceRollCommand extends commando.Command {
     }
 
     async run(message, args) {
-        var roll = Math.floor(Math.random() * 6) + 1;
-        message.reply("You rolled a:  " + roll);
+        //Simply rolls a d6
+        //TODO: Improve this by allowing user to roll any type of dice (i.e.: d20 d100 d4 etc)
+        message.reply("You rolled a:  " + (Math.floor(Math.random() * 6) + 1));
     }
 }
 
