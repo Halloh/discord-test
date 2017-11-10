@@ -1,5 +1,8 @@
 const Discord = require('discord.js');
 const Commando = require('discord.js-commando');
+const Weather = require('weather-js');
+
+
 /*
 client.on("ready", () => {
     client.user.setPresence({ game: { name: "with my code", type: 0 } });
@@ -34,28 +37,63 @@ client.on('message', function (message) {
     }
 });
 
+
+//Global settings
+const prefix = '~' // This is the prefix, you can change it to whatever you want
+
+
+
 // listener Event:  Message Recieved (this will run every time a message is recieved)
 client.on("message", message => {
 
     //Variables
     let sender = message.author; // The person who sent the message
     let msg = message.content.toUpperCase(); // Takes the message, and makes it all upercase
-    let prefix = '>' // The text before commands, you can set this howerver you want
-
+    let cont = message.content.slice(prefix.length).split(" "); //This variable slices off the prefix
+    let args 
     //Weather command - requires weather.js
+    if (msg.startsWith(prefix + 'WEATHER')) {
+        weather.find({search: args.join(" "), degreeType: 'F'}, function (err, result){
+            if(err) {
+                message.send(err);
+            }
+            
+            message.channel.send(JSON.stringify(result[0].current, null, 2)); //This posts the CURRENT part of the FIRST result
+            
+        });  
+    }    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 
     //Anti 2 stock joke function
-    if(message.content === '2 stock' || message.content === '2-stock' || message.content === '2stock'){
+    if(message.content === '2 stock' || message.content === '2-stock' || message.content === '2stock' message.content === 'two stock'){
 
         //Deleting specific messages (messages that are not an ID for me)
         if (message.channel.id === '346801330817466368' || message.channel.id === '376477068017532930') //First id is 'general'.  Second id is 'testing'
         {
                 message.delete() // This deletes message
-                console.log("We went off");
         }
 
         //message.edit('This is my new content!');
