@@ -88,7 +88,7 @@ client.on("message", message => {
 
 
     //Anti 2 stock joke function
-    if(message.content === '2 stock' || message.content === '2-stock' || message.content === '2stock' message.content === 'two stock'){
+    if(message.content === '2 stock' || message.content === '2-stock' || message.content === '2stock' || message.content === 'two stock'){
 
         //Deleting specific messages (messages that are not an ID for me)
         if (message.channel.id === '346801330817466368' || message.channel.id === '376477068017532930') //First id is 'general'.  Second id is 'testing'
