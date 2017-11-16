@@ -102,5 +102,5 @@ client.on("message", message => {
 });
 
 //DO NOT REVEAL THIS TOKEN TO ANYONE
-client.login('Mzc2NjA5MzgzNzkxOTg0NjQx.DOItDA.voX56lRolDktsP9JoDlj8gIlJNI');
+client.login(process.env.BOT_TOKEN);
 
