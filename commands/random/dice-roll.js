@@ -6,13 +6,23 @@ const commando = require('discord.js-commando');
             name: 'roll',
             group: 'test',
             memberName: 'roll',
-            description: 'Rolls a die'
+            description: 'Rolls a die',
+            examples: ['!roll <dice number>'],
+            args: [
+                {
+                    key: 'number',
+                    prompt: 'I need an integer to roll',
+                    type: 'integer',
+                    validate: number => {
+                        if(Number.isInteger(number)) return true;
+                        return 'I need a whole number.  Like 1, 5, 4, etc';
+                    }
+                }
+            ]
         });
     }
 
-    async run(message, args) {
-        //Simply rolls a d6
-        //TODO: Improve this by allowing user to roll any type of dice (i.e.: d20 d100 d4 etc)
-        message.reply("You rolled a:  " + (Math.floor(Math.random() * 6) + 1));
+    run(message, { number }) {
+        message.reply("You rolled a:  " + (Math.floor(Math.random() * number) + 1));
     }
 };
