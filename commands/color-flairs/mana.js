@@ -3,7 +3,7 @@ const commando = require('discord.js-commando');
 
 //NOTE:  commands are classes exported with module.exports
 
-module.exports = class ReplyCommand extends Command {
+class ManaCommand extends commando.Command {
     constructor(client) {
         super(client, {
             name: 'mana',  //name of the command
@@ -23,3 +23,5 @@ module.exports = class ReplyCommand extends Command {
     }
 
 };
+
+module.exports = ManaCommand;  //Makes sure that this gets exported so bot can import correctly

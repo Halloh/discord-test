@@ -1,7 +1,7 @@
 //Command to message list of updates
 const commando = require('discord.js-commando');
 
-class ListChangelogUpdate extends commando.Command {
+class UpdateCommand extends commando.Command {
     constructor(client){
         super(client, {
             name: 'update',
@@ -16,3 +16,5 @@ class ListChangelogUpdate extends commando.Command {
          return msg.say('Hi, I\'m awake!');  //NOTE:  .say() is commando's version of message.channel.send
     }
 };
+
+module.exports = UpdateCommand;  //Makes sure that this gets exported so bot can import correctly
