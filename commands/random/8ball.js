@@ -18,7 +18,7 @@ module.exports = class EightBallCommand extends commando.Command {
         });
     }
 
-    run(msg, { content }){
+    run(msg){
         console.log(msg);
 
         //First 20 are from standard 8 ball replies.  Anything afterwards are just custom replies
