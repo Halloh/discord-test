@@ -58,7 +58,6 @@ client.on('message', function (message) {
 const prefix = '~' // This is the prefix, you can change it to whatever you want
 
 
-
 // listener Event:  Message Recieved (this will run every time a message is recieved)
 client.on("message", message => {
 
