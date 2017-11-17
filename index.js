@@ -17,9 +17,8 @@ const client = new Commando.Client({
 client.registry
     //Register custom command groups
     .registerGroups([
-        ['test', 'Testing functions'],
-        ['update', 'Describe my updates'],
-        ['color-flairs', 'Highlight user name in different colors']
+        ['test', 'Under Testing'],
+        ['random', 'Random Commands']
     ])
 // Registers all built-in groups, commands, and argument types
 .registerDefaults();
