@@ -4,7 +4,7 @@ const commando = require('discord.js-commando');
     constructor(client) {
         super(client, {
             name: 'roll',
-            group: 'test',
+            group: 'random',
             memberName: 'roll',
             description: 'Rolls a die',
             examples: ['!roll <dice number>'],

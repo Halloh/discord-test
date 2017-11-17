@@ -5,7 +5,7 @@ module.exports = class EightBallCommand extends commando.Command {
         super(client, {
             name: '8ball',
             group: 'random',
-            memberName: 'roll',
+            memberName: '8ball',
             description:  '\"High tech\" fortune telling mechanism',
             examples: ['!8ball <question>'],
             args: [

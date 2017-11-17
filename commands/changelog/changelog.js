@@ -5,7 +5,7 @@ class ChangelogCommand extends commando.Command {
     constructor(client){
         super(client, {
             name: 'changelog',
-            group: 'commands',
+            group: 'changelog',
             memberName: 'update',
             description: 'Displays list of new features and updates',
             examples: ['!changelog']
@@ -13,7 +13,7 @@ class ChangelogCommand extends commando.Command {
     }
 
     run(msg){
-         return msg.say('Master is almost done figuring out Commando.js.  Now if only he can finally give me a decent feature...');  //NOTE:  .say() is commando's version of message.channel.send
+         return msg.say('Master is almost done figuring out Commando.js.  He made my dice roll function to be better.  Use !help for more info!  Now if only he can finally give me a decent feature...');  //NOTE:  .say() is commando's version of message.channel.send
     }
 };
 
