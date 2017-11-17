@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const Commando = require('discord.js-commando');
+const path = require('path');
 const Weather = require('weather-js');
 
 
@@ -9,18 +10,33 @@ client.on("ready", () => {
 });
 */
 const client = new Commando.Client({
+    commandPrefix: '!', //What you must type first to use bot command
     owner: '232028507432026112'  //Specify that I'm the owner so I can have full access to the bot from anywhere
 }); //NOTE:  commando is an extension of discord client
 
 client.registry
     //Register custom command groups
     .registerGroups([
-        ['random', 'Testing functions'],
+        ['test', 'Testing functions'],
         ['update', 'Describe my updates'],
+        ['color-flairs', 'Highlight user name in different colors']
     ])
 // Registers all built-in groups, commands, and argument types
 .registerDefaults();
 
+//You can disable default commands in here.  Just pass an object that contains command name and set the property to 'false
+//FIXEME:  red squiggly is showing for some reason
+/*
+.registerDefaultCommands({
+    help: false
+})
+*/
+
+client.on('ready', () => {
+    console.log('Wisp is logged in');
+    client.user.setGame('League of Legends');
+    //if .setGame() isn't working, use setActivity();
+})
 //NOTE:  __dirname means current directory
 client.registry.registerCommandsIn(__dirname + "/commands");
 
