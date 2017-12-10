@@ -28,10 +28,11 @@ client.registry
     //NOTE:  __dirname means current directory
     .registerCommandsIn(__dirname + "/commands")
 
+    /*
     //You can disable default commands in here.  Just pass an object that contains command name and set the property to 'false
     .registerDefaultCommands({
         help: false
-    });
+    });*/
 
 
 client.on('ready', () => {
@@ -60,7 +61,8 @@ const prefix = '~' // This is the prefix, you can change it to whatever you want
 
 // listener Event:  Message Recieved (this will run every time a message is recieved)
 client.on("message", message => {
-
+    
+/*
     //Variables
     let sender = message.author; // The person who sent the message
     let msg = message.content.toUpperCase(); // Takes the message, and makes it all upercase
@@ -76,7 +78,7 @@ client.on("message", message => {
             message.channel.send(JSON.stringify(result[0].current, null, 2)); //This posts the CURRENT part of the FIRST result
             
         });  
-    }    
+    }    */
 
     //Anti 2 stock joke function
     if(message.content === '2 stock' || message.content === '2-stock' || message.content === '2stock' || message.content === 'two stock'){
