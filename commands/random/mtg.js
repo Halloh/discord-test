@@ -23,7 +23,8 @@ module.exports = class MtgSearch extends commando.Command {
     run(){
       mtg.card.find(3)
       .then(result => {
-          console.log(result); // "Black Lotus stuff"
+          message.reply(result.card.imageUrl)
+          //console.log(result); // "Black Lotus stuff"
       }) 
     };
 }
