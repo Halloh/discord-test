@@ -1,8 +1,8 @@
 const Discord = require('discord.js');
 const Commando = require('discord.js-commando');
 const path = require('path');
-const Weather = require('weather-js');
-
+const Weather = require('weather-js'); //NOTE:  not implemented yet
+const mtg = require('mtgsdk');  //NOTE:  Not sure if need this
 
 /*
 client.on("ready", () => {
@@ -17,28 +17,28 @@ const client = new Commando.Client({
 client.registry
     //Register custom command groups
     .registerGroups([
-        ['test', 'Under Testing (shouldn\'t be working right now)'],
-        ['random', 'Random Commands'],
-        ['changelog', 'Utility']
+        ["test", `Under Testing (shouldn't be working right now)`],
+        ["random", "Random Commands"],
+        ["changelog", "Other"]
     ])
-// Registers all built-in groups, commands, and argument types
-.registerDefaults();
+    // Registers all built-in groups, commands, and argument types
+    .registerDefaults()
 
-//You can disable default commands in here.  Just pass an object that contains command name and set the property to 'false
-//FIXEME:  red squiggly is showing for some reason
-/*
-.registerDefaultCommands({
-    help: false
-})
-*/
+    // Registers all of your commands in the ./commands/ directory 
+    //NOTE:  __dirname means current directory
+    .registerCommandsIn(__dirname + "/commands")
+
+    //You can disable default commands in here.  Just pass an object that contains command name and set the property to 'false
+    .registerDefaultCommands({
+        help: false
+    });
+
 
 client.on('ready', () => {
     console.log('Wisp is logged in');
     client.user.setGame('League of Legends');
     //if .setGame() isn't working, use setActivity();
 })
-//NOTE:  __dirname means current directory
-client.registry.registerCommandsIn(__dirname + "/commands");
 
 client.on("message", (message) => {
     if (message.content.startsWith("Wisp bot")) {
@@ -78,30 +78,6 @@ client.on("message", message => {
         });  
     }    
 
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     //Anti 2 stock joke function
     if(message.content === '2 stock' || message.content === '2-stock' || message.content === '2stock' || message.content === 'two stock'){
 
@@ -111,11 +87,8 @@ client.on("message", message => {
                 message.delete() // This deletes message
         }
 
-        //message.edit('This is my new content!');
         sender.send("What the fuck did you just fucking say about my master, you little bitch? I’ll have you know I graduated top of my class in Bot School, and I’ve been involved in numerous secret raids on Al-Quaeda, and I have over 300 confirmed kills. I am trained in gorilla warfare and I’m the top sniper in the entire US armed forces. You are nothing to me but just another target. I will wipe you the fuck out with precision the likes of which has never been seen before on this Earth, mark my fucking words. You think you can get away with saying that shit to me over Discord? Think again, fucker. As we speak I am contacting my secret network of spies across the USA and your IP is being traced right now so you better prepare for the storm, maggot. The storm that wipes out the pathetic little thing you call your life. You’re fucking dead, kid. I can be anywhere, anytime, and I can kill you in over seven hundred ways, and that’s just with my bare hands. Not only am I extensively trained in unarmed combat, but I have access to the entire arsenal of the United States Marine Corps and I will use it to its full extent to wipe your miserable ass off the face of the continent, you little shit. If only you could have known what unholy retribution your little “clever” comment was about to bring down upon you, maybe you would have held your fucking tongue. But you couldn’t, you didn’t, and now you’re paying the price, you goddamn idiot. I will shit fury all over you and you will drown in it. You’re fucking dead, kiddo."); 
     }
 });
 
-//DO NOT REVEAL THIS TOKEN TO ANYONE
 client.login(process.env.BOT_TOKEN);
-
