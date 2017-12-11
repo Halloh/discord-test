@@ -19,8 +19,6 @@ module.exports = class EightBallCommand extends commando.Command {
     }
 
     run(msg){
-        console.log(msg);
-
         //First 20 are from standard 8 ball replies.  Anything afterwards are just custom replies
         let fortune = [
             'It is certain',
@@ -51,7 +49,6 @@ module.exports = class EightBallCommand extends commando.Command {
 
         //Generate random number between 0 and max array length of fortune[]
         let i = Math.floor(Math.random() * fortune.length);
-        return msg.reply(fortune[i]);
+        msg.reply(fortune[i]);
     }
-
 };

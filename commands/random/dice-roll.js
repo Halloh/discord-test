@@ -24,6 +24,7 @@ const commando = require('discord.js-commando');
     }
 
     run(message, { number }) {
+        console.log(number);
         message.reply("You rolled a:  " + (Math.floor(Math.random() * number) + 1));
     }
 };

@@ -37,8 +37,8 @@ client.registry
 
 client.on('ready', () => {
     console.log('Wisp is logged in');
-    client.user.setGame('League of Legends');
-    //if .setGame() isn't working, use setActivity();
+    client.user.setGame('Mergic der Gertering');
+    //NOTE:  If setGame() isn't working, use setActivity();
 })
 
 client.on("message", (message) => {
@@ -93,4 +93,5 @@ client.on("message", message => {
     }
 });
 
-client.login(process.env.BOT_TOKEN);
+client.login('Mzc2NjA5MzgzNzkxOTg0NjQx.DO7pOw.QLzAn-kCDazyZRi1l1sH4gw47uo');
+//process.env.BOT_TOKEN
