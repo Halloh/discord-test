@@ -13,7 +13,7 @@ class ChangelogCommand extends commando.Command {
     }
 
     run(msg){
-         return msg.say('Master is almost done figuring out Commando.js.  He made my dice roll function to be better.  Use !help for more info!  Now if only he can finally give me a decent feature...');  //NOTE:  .say() is commando's version of message.channel.send
+         return msg.say(`Master game me the ability to search magic cards woot.  He was planning to discontinue me but he\'ll come back.  Like a depressing 0-12 loss streak in Dota 2.  They always come back...`);  //NOTE:  .say() is commando's version of message.channel.send
     }
 };
 

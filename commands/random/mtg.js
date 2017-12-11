@@ -40,10 +40,10 @@ module.exports = class MtgSearch extends commando.Command {
             }
             //Checks if there's more than 1 unique names in the result.  If so, have wisp bot output the list of different names
             if(names.size > 1){
-                message.reply(`It seems that I have more than one result for the name you entered.  Here are the names if you want to look them up.`);
+                message.say(`It seems that I have more than one result for the name you entered.  Here are the names if you want to look them up.`);
                 let list = ''; //Made this to have Wisp bot output the list vs looping through where he sends the name one at a time
                 names.forEach(card => { list += (card + "\n")});
-                message.reply(list);
+                message.say(list);
             }
         });
     };
